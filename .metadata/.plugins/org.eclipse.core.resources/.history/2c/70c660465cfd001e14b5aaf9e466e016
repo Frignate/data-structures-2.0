@@ -1,0 +1,26 @@
+package movementsystem;
+
+public class eventDatabaseNode {
+	
+	
+	eventDatabaseNode nextNode;
+	event eventToStore;
+	
+	
+	protected void attach(eventDatabaseNode node)
+	{
+		nextNode = node;
+	}
+	
+	
+	public eventDatabaseNode(eventDatabaseNode prevNode)
+	{
+		prevNode.attach(prevNode);
+	}
+	
+	public eventDatabaseNode
+	
+	
+	
+	
+}

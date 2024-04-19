@@ -1,0 +1,17 @@
+package movementsystem;
+
+import java.util.ArrayList;
+
+public class eventDatabase {
+	eventDatabaseNode[] table = new eventDatabaseNode[16];
+	
+	
+	private int hash(String key)
+	{
+		return key.length()%16;
+	}
+	
+	public add(event ev)
+	
+	
+}

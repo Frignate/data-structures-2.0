@@ -3,24 +3,18 @@ package movementsystem;
 import java.util.ArrayList;
 
 public class eventManager {
-	public ArrayList<event> masterDatabase;
+	public eventDatabase masterDatabase;
 	public partyData party;
 	public void eventStart(int id)
 	{
 		var eventid = id;
-		while (eventid != -1)
+		while (eventid != 0)
 		{
-			for (event event : masterDatabase) {
-				if(event.id == eventid)
-				{
-					eventid = event.happen(party);
-				}
-			}
+			eventid = masterDatabase.get(eventid).happen(party);
 		}
 	}
-	public eventManager(ArrayList<event> masterDatabase, partyData party) {
-		super();
+	public eventManager(eventDatabase masterDatabase) {
 		this.masterDatabase = masterDatabase;
-		this.party = party;
+		this.party = new partyData();
 	}
 }

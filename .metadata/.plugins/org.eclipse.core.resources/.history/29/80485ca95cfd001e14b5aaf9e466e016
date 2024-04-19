@@ -1,0 +1,32 @@
+package movementsystem;
+
+public class eventDatabaseNode {
+	
+	
+	eventDatabaseNode nextNode;
+	String key;
+	event value;
+	
+	
+	protected void attach(eventDatabaseNode node)
+	{
+		nextNode = node;
+	}
+	
+	
+	public eventDatabaseNode(String key_,event value_,eventDatabaseNode prevNode)
+	{
+		super(key_,value);
+		prevNode.attach(this);
+	}
+	
+	public eventDatabaseNode(String key_,event value_)
+	{
+		key = key_;
+		value = value_;
+	}
+	
+	
+	
+	
+}

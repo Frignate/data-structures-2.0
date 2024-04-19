@@ -8,10 +8,14 @@
     <fullyQualifiedTypeName name="battleSystem.Base.Action"/>
     <fullyQualifiedTypeName name="java.lang.Character"/>
     <fullyQualifiedTypeName name="movementsystem.area"/>
-    <fullyQualifiedTypeName name="movementsystem.eventManager"/>
-    <fullyQualifiedTypeName name="movementsystem.event"/>
-    <fullyQualifiedTypeName name="movementsystem.partyData"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="battleSystem.Base.Character"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="movementsystem.eventDatabaseNode"/>
+    <fullyQualifiedTypeName name="java.lang.Boolean"/>
+    <fullyQualifiedTypeName name="movementsystem.event"/>
+    <fullyQualifiedTypeName name="battleSystem.Base.Character"/>
+    <fullyQualifiedTypeName name="movementsystem.partyData"/>
+    <fullyQualifiedTypeName name="movementsystem.eventDatabase"/>
+    <fullyQualifiedTypeName name="movementsystem.events.Ev_begin"/>
+    <fullyQualifiedTypeName name="movementsystem.eventManager"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

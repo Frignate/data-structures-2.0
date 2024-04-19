@@ -1,12 +1,12 @@
 #
-#Thu Apr 18 10:32:33 TRT 2024
-buildDir=build
-buildScriptPath=build.gradle
-classpath=<?xml version\="1.0" encoding\="UTF-8"?>\n<classpath>\n</classpath>\n
+#Thu Apr 18 12:14:10 TRT 2024
 derivedResources=.gradle;build
-gradleVersion=7.4.2
-hasAutoBuildTasks=false
 linkedResources=
-managedBuilders=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><commands/>
+classpath=<?xml version\="1.0" encoding\="UTF-8"?>\n<classpath>\n</classpath>\n
 managedNatures=
+buildDir=build
+managedBuilders=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><commands/>
+buildScriptPath=build.gradle
 subprojectPaths=
+hasAutoBuildTasks=false
+gradleVersion=7.4.2
