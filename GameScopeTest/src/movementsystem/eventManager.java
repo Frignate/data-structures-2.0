@@ -13,6 +13,7 @@ public class eventManager {
 			eventid = masterDatabase.get(eventid).happen(party);
 		}
 	}
+
 	public eventManager(eventDatabase masterDatabase) {
 		this.masterDatabase = masterDatabase;
 		this.party = new partyData();

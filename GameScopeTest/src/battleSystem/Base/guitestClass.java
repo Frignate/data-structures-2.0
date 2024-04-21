@@ -27,7 +27,7 @@ import battleSystem.Moves.*;
 
 public class guitestClass {
 
-	JFrame window;
+	public JFrame window;
 	Container con;
 	JPanel titleNamePanel, startButtonPanel,leftFightPanel,rightFightPanel,panel,infoPanel;
 	JButton startButton; // wont be necessary
@@ -36,7 +36,7 @@ public class guitestClass {
     ScreenHandlernew sHandler = new ScreenHandlernew();
     Action[] actions;
 	Container battleContainer;
-	battleObjectGui battleManager = null;
+	public battleObjectGui battleManager = null;
 	ArrayList<characterStatus> statuses = new ArrayList<>();
 	
 	public static void main(String[] args) {
@@ -47,13 +47,12 @@ public class guitestClass {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		new guitestClass();
 		 
 
 	}
 	
 	
-	public guitestClass() {
+	public guitestClass(ArrayList<Character> side1, ArrayList<Character> side2) {
 		
 		
 		
@@ -66,7 +65,7 @@ public class guitestClass {
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//window.getContentPane().setBackground(Color.gray);
-		
+		/*/
 		Image pokemonPNG = new ImageIcon(this.getClass().getResource("/images/arena2.png")).getImage();
 		imageLabel1 = new JLabel();
 		imageLabel1.setIcon(new ImageIcon(pokemonPNG));
@@ -130,11 +129,11 @@ public class guitestClass {
 		startButton.addActionListener(sHandler);
 		con.add(startButtonPanel,c);
 		//con.add(imageLabel2);
-		
+				/*/
 
 	
 		//con.add(imageLabel1);
-
+		setupBattleScreen(side1, side2);
 		
 		
 	
@@ -365,13 +364,13 @@ public class guitestClass {
 		//yeni deneme sonu
 	}
 	
-	
 	public class ScreenHandlernew implements ActionListener{
 		
 		public void actionPerformed(ActionEvent event) {
 			
-			
-			Action[] casterActions = new Action[4];
+			/*/		
+			 * 	Action[] casterActions = new Action[4];
+
 			casterActions[0] = new Dekunda();
 			casterActions[1] = new ChantOfDestruction();
 			casterActions[2] = new DarkPulse();
@@ -448,10 +447,10 @@ public class guitestClass {
 			team2.add(bossChar);
 			team2.add(lSoul2);
 
-			
-			
-			
 			setupBattleScreen(team1,team2);
+									 */
+
+
 		}
 		
 		

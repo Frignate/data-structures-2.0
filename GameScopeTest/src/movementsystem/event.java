@@ -1,6 +1,6 @@
 package movementsystem;
 
 public abstract class event {
-	public int id;
+	public String name;
 	public abstract int happen(partyData party);
 }

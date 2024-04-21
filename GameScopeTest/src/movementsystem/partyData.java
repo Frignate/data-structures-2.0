@@ -9,7 +9,8 @@ public class partyData {
 	public int gold;
 	public area location;
 	
-	
+	public ArrayList<quest> questlines = new ArrayList<>();
+	public ArrayList<quest> completedQuests = new ArrayList<>();
 	@Override
 	public String toString() {
 		String names = "";
@@ -18,6 +19,52 @@ public class partyData {
 		}
 		return "partyData [party= " + names  + ", gold=" + gold + ", location=" + location.Name + "]";
 	}
+	public void addNewQuest(quest questToAdd)
+	{
+		System.out.println("New Quest: " + questToAdd.name);
+		questlines.add(questToAdd);
+	}
+	public boolean isquestComplete(int qid) {
+		for(quest q : completedQuests)
+		{
+			if(q.questID == qid)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	public boolean isquestOngoing(int qid)
+	{
+		for(quest q : questlines)
+		{
+			if(q.questID == qid)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	public void progressQuest(int cid) {
+		for (int i = 0; i < questlines.size();i++) {
+			var q = questlines.get(i);
+			if(q.completionEvID == cid) {
+				q.completinoEvAmount--;
+				if(q.completinoEvAmount <= 0)
+				{
+					System.out.println("Quest Complete: " + q.name);
+					completedQuests.add(q);
+					if(q.nextQuest != null)
+					{
+						addNewQuest(q.nextQuest);
+					}
+					questlines.remove(q);
+					i--;
+				}
+			}
+		}
+	}
+	
 	
 	
 	public ArrayList<Character> getParty() {

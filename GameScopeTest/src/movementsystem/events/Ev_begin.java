@@ -27,8 +27,10 @@ import battleSystem.Moves.SongOfPeace;
 import battleSystem.Moves.Volley;
 import battleSystem.Moves.WeightOfTheWorld;
 import movementsystem.area;
+import movementsystem.arealist;
 import movementsystem.event;
 import movementsystem.partyData;
+import movementsystem.areas.Manor;
 
 public class Ev_begin extends event {
 
@@ -78,10 +80,9 @@ public class Ev_begin extends event {
 		Character char4 = new Character("Clara, One Without Shoes",20, enchanter,new ImageIcon (Toolkit.getDefaultToolkit().getImage(guitestClass.class.getResource("/images/char3.png"))),new ImageIcon (Toolkit.getDefaultToolkit().getImage(guitestClass.class.getResource("/images/chardeath3.png"))));
 		char4.setupMoves(enchanterActions);
 		
-		area manor = new area("plc_manor","Manor OF bruh");
 		
 		party.setGold(0);
-		party.setLocation(manor);
+		party.setLocation(arealist.arealist.get(0));
 		party.addToParty(char1);
 		party.addToParty(char2);		
 		party.addToParty(char3);

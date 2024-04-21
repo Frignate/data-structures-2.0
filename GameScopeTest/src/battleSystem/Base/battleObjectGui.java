@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class battleObjectGui {
 	
-	
+	public static boolean battleresult = true;
 	guitestClass guiClass;
 	int BattleState;
 	int BattleIterator = 0;
@@ -20,7 +20,7 @@ public class battleObjectGui {
 	static ArrayList<actionResult> messages;
 	int AlliesAlive;
 	int OpponentsAlive;
-	turnState state = turnState.moveSelect;
+	public turnState state = turnState.moveSelect;
 	MoveOrderTree moveTree;
 	
 	int turncounter = 0;
@@ -69,6 +69,7 @@ public class battleObjectGui {
 		messages.add(msg);
 	}
 	
+	
 	public void getNewText()
 	{
 		if(!messages.isEmpty())
@@ -114,11 +115,15 @@ public class battleObjectGui {
 			getNewText();
 			break;
 		case victorious:
+			guiClass.window.dispose();
+			guiClass = null;
 			addMessage(new actionResult("You Won"));
 			getNewText();
 			BattleState = -1;
 			break;
 		case defeated:
+			guiClass.window.dispose();
+			guiClass = null;
 			addMessage(new actionResult("You Lost"));
 			getNewText();
 			BattleState = -1;

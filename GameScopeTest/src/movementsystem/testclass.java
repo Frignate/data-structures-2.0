@@ -26,18 +26,14 @@ import battleSystem.Moves.ShieldBreak;
 import battleSystem.Moves.SongOfPeace;
 import battleSystem.Moves.Volley;
 import battleSystem.Moves.WeightOfTheWorld;
+import movementsystem.events.Ev_TalkToErina;
 import movementsystem.events.Ev_begin;
 
 public class testclass {
 
 	public static void main(String[] args) {
-		eventDatabase database = new eventDatabase();
-		database.add(1, new Ev_begin());
-		eventManager manager = new eventManager(database);
-		
-		manager.eventStart(1);
-		
-		System.out.println(manager.party.toString());
+		EventConsole console = new EventConsole();
+		while(console.getinput());
 	}
 
 }
