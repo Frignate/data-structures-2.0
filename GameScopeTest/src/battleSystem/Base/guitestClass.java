@@ -19,15 +19,16 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JWindow;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import battleSystem.Moves.*;
 
-public class guitestClass {
+public class guitestClass extends JFrame  {
 
-	public JFrame window;
+	public JFrame window = this;
 	Container con;
 	JPanel titleNamePanel, startButtonPanel,leftFightPanel,rightFightPanel,panel,infoPanel;
 	JButton startButton; // wont be necessary
@@ -52,17 +53,16 @@ public class guitestClass {
 	}
 	
 	
-	public guitestClass(ArrayList<Character> side1, ArrayList<Character> side2) {
+	public guitestClass(ArrayList<Character> side1, ArrayList<Character> side2, battleObjectGui manager) {
 		
 		
 		
 		
-		
-		window = new JFrame();
+		battleManager = manager;
 		window.setIconImage(Toolkit.getDefaultToolkit().getImage(guitestClass.class.getResource("/images/ball.png")));
 		window.setSize(700,600);
 		window.setPreferredSize(window.getSize());
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		//window.getContentPane().setBackground(Color.gray);
 		/*/
@@ -139,6 +139,10 @@ public class guitestClass {
 	
 	}
 	
+	public void endbattle()
+	{
+		window.dispose();
+	}
 	
 	
 	
@@ -295,7 +299,7 @@ public class guitestClass {
 		JPanel buttonpanel = new JPanel();
 		buttonpanel.setOpaque(false);
 		buttonpanel.setLayout(new BoxLayout(buttonpanel, BoxLayout.X_AXIS));
-		battleManager = new battleObjectGui(this);
+		
 		battlebuttons = new CustomButton[5];
 		 for(int i = 0; i < 4; i++)
 		 {
@@ -360,7 +364,6 @@ public class guitestClass {
 		window.pack();
 		window.setVisible(true);
 		window.toFront();
-
 		//yeni deneme sonu
 	}
 	

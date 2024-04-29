@@ -9,6 +9,7 @@ import battleSystem.Base.Character;
 import battleSystem.Moves.*;
 import movementsystem.events.Ev_TalkToErina;
 import movementsystem.events.Ev_begin;
+import movementsystem.events.Ev_doNothing;
 import movementsystem.events.Ev_enterArea;
 import movementsystem.events.Ev_enterBattle;
 
@@ -23,7 +24,7 @@ public class eventDatabase {
 		enemyActions[2] = new Dash();
 		enemyActions[3] = new Firebolt();
 		CharacterTemplate boss = new CharacterTemplate(-1,20, 10, 10, 10, 10, 10);
-		Character bossChar = new Character("Erina, Corrupt",40, boss,new ImageIcon (Toolkit.getDefaultToolkit().getImage(guitestClass.class.getResource("/images/monster.png"))),new ImageIcon (Toolkit.getDefaultToolkit().getImage(guitestClass.class.getResource("/images/impdead.png"))));
+		Character bossChar = new Character("Erina, Corrupt",10, boss,new ImageIcon (Toolkit.getDefaultToolkit().getImage(guitestClass.class.getResource("/images/monster.png"))),new ImageIcon (Toolkit.getDefaultToolkit().getImage(guitestClass.class.getResource("/images/impdead.png"))));
 		bossChar.setupMoves(enemyActions);
 		
 		
@@ -32,6 +33,7 @@ public class eventDatabase {
 		add(3, new Ev_TalkToErina());
 		add(4, new Ev_enterArea(1000));
 		add(5, new Ev_enterBattle(bossChar));
+		add(6, new Ev_doNothing());
 	}
 	
 	

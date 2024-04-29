@@ -6,8 +6,9 @@ import java.util.Random;
 
 public class battleObjectGui {
 	
-	public static boolean battleresult = true;
-	guitestClass guiClass;
+	public static volatile boolean battleresult = false;
+	public static volatile boolean isVictorious = false;
+ 	guitestClass guiClass;
 	int BattleState;
 	int BattleIterator = 0;
 	int currentCharacter;
@@ -32,7 +33,7 @@ public class battleObjectGui {
 	
 	public battleObjectGui (ArrayList<Character> side1,ArrayList<Character> side2)
 	{
-		this.guiClass = null;
+		battleresult = false;
 		messages = new ArrayList<>();
 		actionToPerform = null;
 		this.BattleState = 0;
@@ -44,6 +45,7 @@ public class battleObjectGui {
 		currentCharacter = 0;
 		side1Attacked = 0;
 		side2Attacked = 0;
+		guiClass = new guitestClass(side1, side2, this);
 		displayText("What will " + side1.get(currentCharacter).Name + " do?");
 	}
 	
@@ -69,6 +71,11 @@ public class battleObjectGui {
 		messages.add(msg);
 	}
 	
+	public void endbattle()
+	{
+		guiClass.dispose();
+		battleresult = true;
+	}
 	
 	public void getNewText()
 	{
@@ -101,7 +108,7 @@ public class battleObjectGui {
 		{
 		guiClass.infoLabel.setText(Msg);
 		}
-		System.out.println(Msg); //TODO: set the main label to Msg
+		//System.out.println(Msg); //TODO: set the main label to Msg
 	}
 	
 	public void proceedBattle()
@@ -115,18 +122,18 @@ public class battleObjectGui {
 			getNewText();
 			break;
 		case victorious:
-			guiClass.window.dispose();
-			guiClass = null;
 			addMessage(new actionResult("You Won"));
 			getNewText();
 			BattleState = -1;
+			endbattle();
+
 			break;
 		case defeated:
-			guiClass.window.dispose();
-			guiClass = null;
 			addMessage(new actionResult("You Lost"));
 			getNewText();
 			BattleState = -1;
+			isVictorious = false;
+			endbattle();	
 			break;
 		case moveSelect:
 			getNewText();
@@ -229,7 +236,7 @@ public class battleObjectGui {
 			}
 			break;
 		case -1:
-			System.out.println("skipped");
+			//System.out.println("skipped");
 			getNewText();
 			break;
 		default:
@@ -239,7 +246,7 @@ public class battleObjectGui {
 		}
 		else
 		{
-			System.out.println("skipped");
+			//System.out.println("skipped");
 			getNewText();
 		}
 	}
@@ -391,7 +398,7 @@ public class battleObjectGui {
 					addMessage(new actionResult("opponentAlreadyDead"));
 					continue;
 				}
-				System.out.println(CurrNode.Caster.Name + " used " + CurrNode.actionToPerform.Name + "!");
+				//System.out.println(CurrNode.Caster.Name + " used " + CurrNode.actionToPerform.Name + "!");
 				CurrNode.actionToPerform.Energy--;
 				if(CurrNode.isSide1)
 				{

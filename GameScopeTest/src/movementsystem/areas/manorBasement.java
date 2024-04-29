@@ -9,9 +9,9 @@ public class manorBasement extends area {
 		this.id = 1001;
 		this.Name = "Manor Basement";
 		buttonevents[0] = 4;
-		buttonevents[1] = -1;
-		buttonevents[2] = -1;
-		buttonevents[3] = -1;
+		buttonevents[1] = 6;
+		buttonevents[2] = 6;
+		buttonevents[3] = 6;
 	}
 	
 

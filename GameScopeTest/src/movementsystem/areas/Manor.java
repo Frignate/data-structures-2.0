@@ -12,8 +12,8 @@ public class Manor extends area {
 		
 		buttonevents[0] = 2;
 		buttonevents[1] = 3;
-		buttonevents[2] = -1;
-		buttonevents[3] = -1;
+		buttonevents[2] = 6;
+		buttonevents[3] = 6;
 	}
 
 }
