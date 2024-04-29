@@ -1,8 +1,9 @@
 package battleSystem.Base;
-import battleSystem.Moves.*;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+
+import battleSystem.Moves.Suffer;
 
 public class BattleObject {
 	public static boolean Battle(ArrayList<Character> PlayerSide, ArrayList<Character> OpponentSide)

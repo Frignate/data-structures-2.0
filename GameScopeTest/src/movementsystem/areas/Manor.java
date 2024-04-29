@@ -1,8 +1,6 @@
 package movementsystem.areas;
 
 import movementsystem.area;
-import movementsystem.events.Ev_TalkToErina;
-import movementsystem.events.Ev_enterArea;
 
 public class Manor extends area {
 

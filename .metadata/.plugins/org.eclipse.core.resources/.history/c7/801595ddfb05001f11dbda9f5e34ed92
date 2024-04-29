@@ -1,0 +1,40 @@
+package movementsystem.events;
+
+import java.util.ArrayList;
+
+import battleSystem.Base.Character;
+import battleSystem.Base.battleFunctions;
+import battleSystem.Base.battleObjectGui;
+import movementsystem.EventGui;
+import movementsystem.event;
+import movementsystem.partyData;
+
+public class Ev_enterBattle extends event {
+	
+	ArrayList<Character> chars = new ArrayList<>(); 
+	battleObjectGui battle = null;
+	public Ev_enterBattle(Character Char) {
+		chars.add(Char);
+		name = "Battle: "+ Char.getName();
+	}
+
+	@Override
+	public int happen(partyData party) {
+		System.out.println("Batte!");
+		battle = new battleObjectGui(party.getParty(),chars);
+		EventGui.maingui.setVisible(false);
+		EventGui.maingui.setEnabled(false);
+
+	}
+	
+	public int happenend
+	{
+		EventGui.maingui.setEnabled(true);
+		EventGui.maingui.setVisible(true);
+		boolean victory = battleObjectGui.isVictorious;
+		System.out.println("disposed");
+		party.progressQuest(6);
+		party.location.buttonevents[1] = 3;
+	}
+
+}

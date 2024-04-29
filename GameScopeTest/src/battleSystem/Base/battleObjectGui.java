@@ -1,13 +1,16 @@
 package battleSystem.Base;
-import battleSystem.Moves.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
+import battleSystem.Moves.Suffer;
+import movementsystem.events.Ev_enterBattle;
+
 public class battleObjectGui {
 	
-	public static volatile boolean battleresult = false;
-	public static volatile boolean isVictorious = false;
+	public Ev_enterBattle event = null;
+	public boolean isVictorious = false;
+	public 
  	guitestClass guiClass;
 	int BattleState;
 	int BattleIterator = 0;
@@ -31,9 +34,9 @@ public class battleObjectGui {
 		messages = new ArrayList<>();
 	}
 	
-	public battleObjectGui (ArrayList<Character> side1,ArrayList<Character> side2)
+	public battleObjectGui (Ev_enterBattle event_, ArrayList<Character> side1,ArrayList<Character> side2)
 	{
-		battleresult = false;
+		event = event_;
 		messages = new ArrayList<>();
 		actionToPerform = null;
 		this.BattleState = 0;
@@ -74,7 +77,7 @@ public class battleObjectGui {
 	public void endbattle()
 	{
 		guiClass.dispose();
-		battleresult = true;
+		event.happenend(isVictorious);
 	}
 	
 	public void getNewText()
@@ -125,6 +128,7 @@ public class battleObjectGui {
 			addMessage(new actionResult("You Won"));
 			getNewText();
 			BattleState = -1;
+			isVictorious = true;
 			endbattle();
 
 			break;

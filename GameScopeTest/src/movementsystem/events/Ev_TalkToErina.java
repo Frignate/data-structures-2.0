@@ -1,8 +1,5 @@
 package movementsystem.events;
 
-import java.io.Console;
-
-import movementsystem.arealist;
 import movementsystem.event;
 import movementsystem.partyData;
 import movementsystem.quests.mainQuest1;

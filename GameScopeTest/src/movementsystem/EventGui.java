@@ -5,16 +5,12 @@ import java.awt.FlowLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 
-import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JSeparator;
-import javax.swing.JTable;
 import javax.swing.SwingConstants;
 
 import battleSystem.Base.guitestClass;
@@ -41,7 +37,6 @@ public class EventGui extends JFrame{
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(guitestClass.class.getResource("/images/ball.png")));
 		frame.setSize(1000,500);
 		frame.setPreferredSize(frame.getSize());
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setContentPane(new JPanel());
 		frame.setLayout(new BorderLayout());
 		textbar.setHorizontalAlignment(SwingConstants.CENTER);

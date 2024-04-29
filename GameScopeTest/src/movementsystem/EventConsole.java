@@ -2,10 +2,6 @@ package movementsystem;
 
 import java.util.Scanner;
 
-import movementsystem.events.Ev_TalkToErina;
-import movementsystem.events.Ev_begin;
-import movementsystem.events.Ev_enterArea;
-
 public class EventConsole {
 	public eventManager manager;
 	public Scanner inputScanner;

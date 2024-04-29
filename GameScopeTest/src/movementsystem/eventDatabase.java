@@ -1,12 +1,17 @@
 package movementsystem;
 
 import java.awt.Toolkit;
-import java.util.ArrayList;
 
-import battleSystem.Base.*;
 import javax.swing.ImageIcon;
+
+import battleSystem.Base.Action;
 import battleSystem.Base.Character;
-import battleSystem.Moves.*;
+import battleSystem.Base.CharacterTemplate;
+import battleSystem.Base.guitestClass;
+import battleSystem.Moves.ChantOfDestruction;
+import battleSystem.Moves.Dash;
+import battleSystem.Moves.Firebolt;
+import battleSystem.Moves.HealSpell;
 import movementsystem.events.Ev_TalkToErina;
 import movementsystem.events.Ev_begin;
 import movementsystem.events.Ev_doNothing;

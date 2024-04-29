@@ -1,7 +1,6 @@
 package movementsystem.events;
 
 import java.awt.Toolkit;
-import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 
@@ -18,7 +17,6 @@ import battleSystem.Moves.Dash;
 import battleSystem.Moves.Dekunda;
 import battleSystem.Moves.EmotionalDamage;
 import battleSystem.Moves.Firebolt;
-import battleSystem.Moves.HealSpell;
 import battleSystem.Moves.PreciseShot;
 import battleSystem.Moves.Protect;
 import battleSystem.Moves.Rally;
@@ -26,11 +24,9 @@ import battleSystem.Moves.ShieldBreak;
 import battleSystem.Moves.SongOfPeace;
 import battleSystem.Moves.Volley;
 import battleSystem.Moves.WeightOfTheWorld;
-import movementsystem.area;
 import movementsystem.arealist;
 import movementsystem.event;
 import movementsystem.partyData;
-import movementsystem.areas.Manor;
 
 public class Ev_begin extends event {
 

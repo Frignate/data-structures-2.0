@@ -1,7 +1,5 @@
 package movementsystem;
 
-import java.util.ArrayList;
-
 public class eventManager {
 	public eventDatabase masterDatabase;
 	public partyData party;

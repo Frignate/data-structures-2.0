@@ -1,8 +1,0 @@
-package movementsystem;
-
-import java.util.ArrayList;
-
-public class eventDatabase {
-	eventDatabaseNode[] table = new eventDatabaseNode[16];
-	
-}
