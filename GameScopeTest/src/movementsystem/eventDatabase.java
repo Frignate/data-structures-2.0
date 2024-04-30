@@ -12,6 +12,7 @@ import battleSystem.Moves.ChantOfDestruction;
 import battleSystem.Moves.Dash;
 import battleSystem.Moves.Firebolt;
 import battleSystem.Moves.HealSpell;
+import movementsystem.events.Ev_BattleStart;
 import movementsystem.events.Ev_TalkToErina;
 import movementsystem.events.Ev_begin;
 import movementsystem.events.Ev_doNothing;
@@ -39,6 +40,7 @@ public class eventDatabase {
 		add(4, new Ev_enterArea(1000));
 		add(5, new Ev_enterBattle(bossChar));
 		add(6, new Ev_doNothing());
+		add(7, new Ev_BattleStart());
 	}
 	
 	

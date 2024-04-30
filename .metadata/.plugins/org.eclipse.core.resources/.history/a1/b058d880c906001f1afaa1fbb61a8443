@@ -1,0 +1,22 @@
+package movementsystem;
+
+public class quest {
+	public int questID = 0;
+	public int completionEvID = 0;
+	public int completinoEvAmount = 1;
+	public String name = "undefined";
+	public String definition = "dunno";
+	public int nextQuest = null;
+	
+	
+	public quest(int questID, int completionEvID, int completinoEvAmount, String name, String definition,
+			quest nextQuest) {
+		super();
+		this.questID = questID;
+		this.completionEvID = completionEvID;
+		this.completinoEvAmount = completinoEvAmount;
+		this.name = name;
+		this.definition = definition;
+		this.nextQuest = nextQuest;
+	}
+}

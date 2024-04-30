@@ -6,5 +6,17 @@ public class quest {
 	public int completinoEvAmount = 1;
 	public String name = "undefined";
 	public String definition = "dunno";
-	public quest nextQuest = null;
+	public int nextQuestID = 0;
+	
+	
+	public quest(int questID, int completionEvID, int completinoEvAmount, String name, String definition,
+			int nextQuest) {
+		super();
+		this.questID = questID;
+		this.completionEvID = completionEvID;
+		this.completinoEvAmount = completinoEvAmount;
+		this.name = name;
+		this.definition = definition;
+		this.nextQuestID = nextQuest;
+	}
 }

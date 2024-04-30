@@ -1,0 +1,16 @@
+package movementsystem;
+
+import java.util.ArrayList;
+
+public class questDatabase {
+	static ArrayList<quest> questData = new ArrayList<>(null) ;
+	
+	public static void setupQuests()
+	{
+		questData.clear();
+		questData.add(new quest(1,1001,1,"Check Manor Basement","Come on",2));
+		questData.add(2,5,1,"Check Manor Basement","Come on",3);
+		questData.add(1,1001,1,"Check Manor Basement","Come on",0);
+		
+	}
+}

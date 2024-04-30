@@ -1,0 +1,14 @@
+package movementsystem;
+
+import java.util.ArrayList;
+
+public static class questDatabase {
+	static ArrayList<quest> questData;
+	
+	
+	
+	
+	
+	
+	
+}

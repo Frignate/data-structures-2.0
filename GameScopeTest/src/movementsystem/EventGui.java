@@ -23,6 +23,7 @@ public class EventGui extends JFrame{
 	eventManager evmanager;
 	public static EventGui maingui;
 	static ArrayList<message> inbox = new ArrayList<message>();
+	boolean hasText = false;
 	JFrame frame = this;
 	JPanel buttonpanel = new JPanel(new FlowLayout());
 	JLabel textbar = new JLabel("test");
@@ -31,7 +32,7 @@ public class EventGui extends JFrame{
 		maingui = this;
 		arealist.setupAreas();
 		eventDatabase database = new eventDatabase();
-		database.setupEvents();
+		questDatabase.setupQuests();
 		evmanager = new eventManager(database);
 		frame.setTitle("game");
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(guitestClass.class.getResource("/images/ball.png")));
@@ -56,14 +57,19 @@ public class EventGui extends JFrame{
 				eventManager manager = evmanager;
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					if(inbox.isEmpty())
+
+					if(!hasText)
 					{
 					manager.eventStart(evmanager.party.location.buttonevents[selection]);
 					setupbuttons();
+					return;
 					}
-					else
-					{
 					setupbuttons();
+					if(!hasText && evmanager.nextevent != 0)
+					{
+					evmanager.eventStart(evmanager.nextevent);
+					setupbuttons();
+					return;
 					}
 				}
 			});
@@ -77,30 +83,23 @@ public class EventGui extends JFrame{
 	}
 	public void setupbuttons()
 	{
-		if(inbox.isEmpty())
-		{
-			textbar.setText("Party is in " + evmanager.party.location.Name);
-			for(int i = 0 ; i < buttons.length ;i++)
-			{
-				buttons[i].setText(evmanager.masterDatabase.get(evmanager.party.location.buttonevents[i]).name);
-			}
-			return;
-		}
-		processmsg();
-		if(inbox.isEmpty())
+		hasText = processmsg();
+		if(hasText)
 		{
 			for(int i = 0 ; i < buttons.length ;i++)
 			{
-				buttons[i].setText(evmanager.masterDatabase.get(evmanager.party.location.buttonevents[i]).name);
+				buttons[i].setText("Continue");
 			}
 			return;
 		}
+		textbar.setText("Party is in " + evmanager.party.location.Name);
 		for(int i = 0 ; i < buttons.length ;i++)
 		{
-			buttons[i].setText("Continue");
+			buttons[i].setText(evmanager.masterDatabase.get(evmanager.party.location.buttonevents[i]).name);
 		}
+
 	}
-	public void processmsg()
+	public boolean processmsg()
 	{
 		if(!inbox.isEmpty())
 		{
@@ -108,7 +107,9 @@ public class EventGui extends JFrame{
 			System.out.println(msg.msg);
 			textbar.setText(msg.msg);
 			inbox.remove(0);
+			return true;
 		}
+		return false;
 	}
 	public static void sendmsg(String Msg)
 	{

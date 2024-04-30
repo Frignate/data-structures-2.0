@@ -10,7 +10,6 @@ public class EventConsole {
 		arealist.setupAreas();
 		inputScanner = new Scanner(System.in);
 		eventDatabase database = new eventDatabase();
-		database.setupEvents();
 		manager = new eventManager(database);
 		manager.eventStart(1);
 	}

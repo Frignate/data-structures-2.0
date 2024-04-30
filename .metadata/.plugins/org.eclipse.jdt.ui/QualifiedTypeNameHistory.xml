@@ -16,10 +16,13 @@
     <fullyQualifiedTypeName name="movementsystem.partyData"/>
     <fullyQualifiedTypeName name="movementsystem.eventDatabase"/>
     <fullyQualifiedTypeName name="movementsystem.events.Ev_begin"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="battleSystem.Base.battleObjectGui"/>
     <fullyQualifiedTypeName name="battleSystem.Base.battleFunctions"/>
     <fullyQualifiedTypeName name="movementsystem.EventGui"/>
     <fullyQualifiedTypeName name="movementsystem.eventManager"/>
     <fullyQualifiedTypeName name="movementsystem.events.Ev_enterBattle"/>
+    <fullyQualifiedTypeName name="movementsystem.quest"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="movementsystem.questDatabase"/>
+    <fullyQualifiedTypeName name="movementsystem.events.Ev_BattleStart"/>
 </qualifiedTypeNameHistroy>

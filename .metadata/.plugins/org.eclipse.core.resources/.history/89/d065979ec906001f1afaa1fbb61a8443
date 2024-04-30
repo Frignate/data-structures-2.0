@@ -1,0 +1,15 @@
+package movementsystem;
+
+import java.util.ArrayList;
+
+public class questDatabase {
+	static ArrayList<quest> questData = new ArrayList<>(null) ;
+	
+	public static void setupQuests()
+	{
+		questData.clear();
+		questData.ad
+		
+		
+	}
+}

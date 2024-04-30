@@ -54,9 +54,9 @@ public class partyData {
 				{
 					System.out.println("Quest Complete: " + q.name);
 					completedQuests.add(q);
-					if(q.nextQuest != null)
+					if(q.nextQuestID != -1)
 					{
-						addNewQuest(q.nextQuest);
+						addNewQuest(questDatabase.questData.get(q.nextQuestID));
 					}
 					questlines.remove(q);
 					i--;
