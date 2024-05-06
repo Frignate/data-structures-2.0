@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import battleSystem.Base.guitestClass;
+import movementsystem.events.Ev_TalkToErina;
 
 public class EventGui extends JFrame{
 	public static void main(String[] args) {

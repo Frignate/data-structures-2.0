@@ -22,6 +22,7 @@ public class partyData {
 	public void addNewQuest(quest questToAdd)
 	{
 		System.out.println("New Quest: " + questToAdd.name);
+		questToAdd.resetprogress();
 		questlines.add(questToAdd);
 	}
 	public boolean isquestComplete(int qid) {
@@ -49,14 +50,15 @@ public class partyData {
 		for (int i = 0; i < questlines.size();i++) {
 			var q = questlines.get(i);
 			if(q.completionEvID == cid) {
-				q.completinoEvAmount--;
-				if(q.completinoEvAmount <= 0)
+				q.progress++;
+				if(q.completionEvAmount <= q.progress)
 				{
-					System.out.println("Quest Complete: " + q.name);
+					EventGui.sendmsg("Quest Complete: " + q.name);
 					completedQuests.add(q);
 					if(q.nextQuestID != -1)
 					{
-						addNewQuest(questDatabase.questData.get(q.nextQuestID));
+						var newquest = questDatabase.questData.get(q.nextQuestID);
+						addNewQuest(newquest);
 					}
 					questlines.remove(q);
 					i--;
