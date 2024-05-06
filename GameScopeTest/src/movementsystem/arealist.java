@@ -10,7 +10,7 @@ public class arealist {
 	static void setupAreas()
 	{
 		arealist.add(new Manor());
-		arealist.add(new manorBasement());
+		arealist.add(new manorBasement());//comment here
 	}
 
 }
