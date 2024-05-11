@@ -61,17 +61,13 @@ public class EventGui extends JFrame{
 
 					if(!hasText)
 					{
-					manager.eventStart(evmanager.party.location.buttonevents[selection]);
-					setupbuttons();
-					return;
-					}
-					setupbuttons();
-					if(!hasText && evmanager.nextevent != 0)
+					if(evmanager.nextevent!= 0)
 					{
-					evmanager.eventStart(evmanager.nextevent);
-					setupbuttons();
-					return;
+					manager.eventStart(evmanager.nextevent);
 					}
+					manager.eventStart(evmanager.party.location.buttonevents[selection]);
+					}
+					setupbuttons();
 				}
 			});
 			buttonpanel.add(buttons[i]);
@@ -85,20 +81,6 @@ public class EventGui extends JFrame{
 	public void setupbuttons()
 	{
 		hasText = processmsg();
-		if(hasText)
-		{
-			for(int i = 0 ; i < buttons.length ;i++)
-			{
-				buttons[i].setText("Continue");
-			}
-			return;
-		}
-		textbar.setText("Party is in " + evmanager.party.location.Name);
-		for(int i = 0 ; i < buttons.length ;i++)
-		{
-			buttons[i].setText(evmanager.masterDatabase.get(evmanager.party.location.buttonevents[i]).name);
-		}
-
 	}
 	public boolean processmsg()
 	{
@@ -107,8 +89,25 @@ public class EventGui extends JFrame{
 			message msg =inbox.get(0);
 			System.out.println(msg.msg);
 			textbar.setText(msg.msg);
+			for(int i = 0 ; i < buttons.length ;i++)
+			{
+				buttons[i].setText("Continue");
+			}
 			inbox.remove(0);
 			return true;
+		}
+		if(evmanager.nextevent!=0)
+		{
+			for(int i = 0 ; i < buttons.length ;i++)
+			{
+				buttons[i].setText("Continue");
+			}
+			return false;
+		}
+		textbar.setText("Party is in " + evmanager.party.location.Name);
+		for(int i = 0 ; i < buttons.length ;i++)
+		{
+			buttons[i].setText(evmanager.masterDatabase.get(evmanager.party.location.buttonevents[i]).name);
 		}
 		return false;
 	}

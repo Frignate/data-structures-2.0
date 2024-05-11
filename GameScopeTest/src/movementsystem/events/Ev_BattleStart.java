@@ -7,6 +7,9 @@ import movementsystem.partyData;
 
 public class Ev_BattleStart extends event {
 
+	public Ev_BattleStart() {
+		name = "Battle!";
+	}
 	@Override
 	public int happen(partyData party) {
 		EventGui.sendmsg("Battle has begun");

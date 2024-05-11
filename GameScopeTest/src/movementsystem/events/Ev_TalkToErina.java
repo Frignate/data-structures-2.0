@@ -21,9 +21,9 @@ public class Ev_TalkToErina extends event {
 		else if(party.isquestOngoing(1))
 		{
 			EventGui.sendmsg("Erina thanked you and started to transform");
-			party.progressQuest(7);
-			party.location.buttonevents[1] = 5;
-			return 7;
+			party.progressQuest(5);
+			party.location.buttonevents[1] = 7;
+			return 0;
 		}
 		else if(party.isquestOngoing(2))
 		{

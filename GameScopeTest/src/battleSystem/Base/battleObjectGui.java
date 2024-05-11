@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Random;
 
 import battleSystem.Moves.Suffer;
+import movementsystem.EventGui;
 import movementsystem.events.Ev_enterBattle;
 
 public class battleObjectGui {
@@ -55,6 +56,9 @@ public class battleObjectGui {
 	
 	public void startBattle(ArrayList<Character> side1,ArrayList<Character> side2)
 	{
+		
+		EventGui.maingui.setVisible(false);
+		EventGui.maingui.setEnabled(false);
 		messages.clear();
 		actionToPerform = null;
 		this.BattleState = 0;
@@ -76,7 +80,7 @@ public class battleObjectGui {
 	
 	public void endbattle()
 	{
-		guiClass.dispose();
+		guiClass.endbattle();
 		event.happenend(isVictorious);
 	}
 	
@@ -125,19 +129,13 @@ public class battleObjectGui {
 			getNewText();
 			break;
 		case victorious:
-			addMessage(new actionResult("You Won"));
+			//addMessage(new actionResult("You Won"));
 			getNewText();
-			BattleState = -1;
-			isVictorious = true;
-			endbattle();
 
 			break;
 		case defeated:
-			addMessage(new actionResult("You Lost"));
+			//addMessage(new actionResult("You Lost"));
 			getNewText();
-			BattleState = -1;
-			isVictorious = false;
-			endbattle();	
 			break;
 		case moveSelect:
 			getNewText();

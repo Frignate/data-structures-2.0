@@ -24,17 +24,16 @@ public class Ev_enterBattle extends event {
 		partyData = party;
 		System.out.println("Batte!");
 		battle = new battleObjectGui(this,party.getParty(),chars);
-		EventGui.maingui.setVisible(false);
-		EventGui.maingui.setEnabled(false);
 		return 0;
 	}
 	
 	public void happenend(boolean result)
 	{
+		boolean victory = result;
+
+		battle = null;
 		EventGui.maingui.setEnabled(true);
 		EventGui.maingui.setVisible(true);
-		boolean victory = result;
-		battle = null;
 		System.out.println("disposed");
 		if(victory)
 		{
@@ -44,7 +43,6 @@ public class Ev_enterBattle extends event {
 		else
 		{
 			EventGui.sendmsg("You lost");
-			EventGui.maingui.processmsg();
 		}
 	}
 

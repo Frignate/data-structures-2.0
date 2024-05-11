@@ -61,7 +61,7 @@ public class guitestClass extends JFrame  {
 		window.setIconImage(Toolkit.getDefaultToolkit().getImage(guitestClass.class.getResource("/images/ball.png")));
 		window.setSize(700,600);
 		window.setPreferredSize(window.getSize());
-		window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//window.getContentPane().setBackground(Color.gray);
 		/*/
@@ -214,8 +214,11 @@ public class guitestClass extends JFrame  {
 					}
 					else
 					{
+
 					battlebuttons[j].button.setText("end");
 					battlebuttons[j].button.setEnabled(false);
+					battleManager.isVictorious = battleManager.state == turnState.victorious;
+					battleManager.endbattle();
 					}
 				}
 			break;
