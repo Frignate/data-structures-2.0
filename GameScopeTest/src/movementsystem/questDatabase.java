@@ -8,9 +8,9 @@ public class questDatabase {
 	public static void setupQuests()
 	{
 		questData.clear();
-		questData.add(new quest(0,1001,1,"Check Manor Basement","Come on",1));
-		questData.add(new quest(1,5,1,"Check on erina","Come on",2));
-		questData.add(new quest(2,6,1, "Fight Erina","Kill her",-1));
+		questData.add(new quest(0,1001,1,"Check Manor Basement","Basement checked",1));
+		questData.add(new quest(1,5,1,"Check on Erina","Erina checked",2));
+		questData.add(new quest(2,6,1, "Fight Erina","Erina killed",-1));
 		
 	}
 	public static quest getQuest(int id)

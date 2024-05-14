@@ -21,7 +21,7 @@ public class partyData {
 	}
 	public void addNewQuest(quest questToAdd)
 	{
-		System.out.println("New Quest: " + questToAdd.name);
+		EventGui.sendmsg("New Quest: " + questToAdd.name);
 		questToAdd.resetprogress();
 		questlines.add(questToAdd);
 	}

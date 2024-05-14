@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 
 import battleSystem.Base.guitestClass;
@@ -29,6 +30,7 @@ public class EventGui extends JFrame{
 	JPanel buttonpanel = new JPanel(new FlowLayout());
 	JLabel textbar = new JLabel("test");
 	JButton buttons[] = new JButton[4];
+	JTextArea questbar = new JTextArea();
 	public EventGui() {
 		maingui = this;
 		arealist.setupAreas();
@@ -41,12 +43,17 @@ public class EventGui extends JFrame{
 		frame.setPreferredSize(frame.getSize());
 		frame.setContentPane(new JPanel());
 		frame.setLayout(new BorderLayout());
+		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		textbar.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.add(textbar, BorderLayout.CENTER);
 		buttonpanel.setSize(1000,110);
 		buttonpanel.setMaximumSize(buttonpanel.getSize());
 		buttonpanel.setPreferredSize(buttonpanel.getSize());
 		frame.getContentPane().add(buttonpanel,BorderLayout.PAGE_END);
+		questbar.setSize(100, 200);
+		questbar.setEditable(false);
+		questbar.setText("Quests");
+		frame.getContentPane().add(questbar,BorderLayout.WEST);
 		for(int i = 0 ; i < buttons.length ;i++)
 		{
 			int a = i;
@@ -64,6 +71,7 @@ public class EventGui extends JFrame{
 					if(evmanager.nextevent!= 0)
 					{
 					manager.eventStart(evmanager.nextevent);
+					
 					}
 					manager.eventStart(evmanager.party.location.buttonevents[selection]);
 					}
@@ -82,8 +90,18 @@ public class EventGui extends JFrame{
 	{
 		hasText = processmsg();
 	}
+	public void setupQuestBar()
+	{
+		String text = "  Quests                      \n";
+		for (quest q : evmanager.party.questlines) {
+			text +="   " +q.name + ":    \n";
+			text +="     " +q.definition + ":"+ q.progress +"/" + q.completionEvAmount + "\n";
+		}
+		questbar.setText(text);
+	}
 	public boolean processmsg()
 	{
+		setupQuestBar();
 		if(!inbox.isEmpty())
 		{
 			message msg =inbox.get(0);
@@ -100,7 +118,7 @@ public class EventGui extends JFrame{
 		{
 			for(int i = 0 ; i < buttons.length ;i++)
 			{
-				buttons[i].setText("Continue");
+				buttons[i].setText(evmanager.masterDatabase.get(evmanager.nextevent).name);
 			}
 			return false;
 		}

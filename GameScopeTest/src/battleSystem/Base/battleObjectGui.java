@@ -1,4 +1,5 @@
 package battleSystem.Base;
+import java.awt.Taskbar.State;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
@@ -81,6 +82,7 @@ public class battleObjectGui {
 	public void endbattle()
 	{
 		guiClass.endbattle();
+		isVictorious = this.state == turnState.victorious;
 		event.happenend(isVictorious);
 	}
 	
