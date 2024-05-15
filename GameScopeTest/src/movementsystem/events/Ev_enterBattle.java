@@ -39,6 +39,7 @@ public class Ev_enterBattle extends event {
 		{
 		partyData.progressQuest(6);
 		partyData.location.buttonevents[1] = 3;
+		EventGui.maingui.setupbuttons();
 		}
 		else
 		{
