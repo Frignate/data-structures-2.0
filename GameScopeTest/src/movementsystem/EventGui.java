@@ -71,9 +71,11 @@ public class EventGui extends JFrame{
 					if(evmanager.nextevent!= 0)
 					{
 					manager.eventStart(evmanager.nextevent);
-					
 					}
+					else
+					{
 					manager.eventStart(evmanager.party.location.buttonevents[selection]);
+					}
 					}
 					setupbuttons();
 				}
